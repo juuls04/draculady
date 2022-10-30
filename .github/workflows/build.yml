@@ -27,7 +27,7 @@ jobs:
         #  shield: (optional) the shield to build. Omit for a standalone board.
         #  cmake-args: (optional) extra arguments to pass to CMake as a string.
         include:
-          - board: le_chiff_ble
+          - board: draculady
     steps:
       - name: Checkout
         uses: actions/checkout@v2
