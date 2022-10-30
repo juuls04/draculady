@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2020 @MangoIV
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |    O    |  P  |
+//  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |    L    | enter/mod2 |
+//  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |    .    |  /  |
+//           | GUI | SPC |shift|            | mod1 | BCKSPC | next |
+           bindings = <
+            &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U &kp I &kp O &kp P
+            &kp A &kp S &kp D &kp F &kp G           &kp H &kp J &kp K &kp L &lt 2 ENTER
+            &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M &kp COMMA &kp DOT &kp FSLH
+            &kp LGUI &kp SPACE &kp LSHFT            &mo 1 &kp BSPC &kp C_NEXT
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+        numbers {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//  7  |   8   |   9   |   +   |   -   |         |  =  |  [  |  ]  |     |     |
+//  4  |   5   |   6   |   *   |   /   |         |     |  {  |  }  |  "  |  ;  |
+//  1  |   2   |   3   |   ^   |       |         |  _  |  (  |  )  |  <  |  >  |
+//             |   0   |  ALT  | CTRL  |         | mod1| bck | previous |
+           bindings = <
+            &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp PLUS     &kp MINUS            &kp KP_EQUAL &kp LEFT_BRACKET &kp RIGHT_BRACKET &trans  &trans
+            &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp STAR     &kp SLASH            &trans       &kp LEFT_BRACE   &kp RIGHT_BRACE   &kp SQT &kp SEMI
+            &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp CARET    &trans               &kp UNDER    &kp LPAR         &kp RPAR          &kp LT   &kp RT
+                                &kp KP_N0 &kp LEFT_ALT &kp LCTRL            &trans       &kp LSHIFT       &kp C_PREVIOUS
+            >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+        };
+        symbols {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//  F1 |  F2  |  F3  |  F4  |  F5  |            | F6  | F7  | F8  | F9  | F10  |
+//  !  |  @   |  #   |  $   |  %   |            | ^   | &   | *   | F11 | F12  |
+//  `  | ESC  | NUM  |  UP  | CAPS |            |BTCLR| BT0 | BT1 | BT2 | BT3  |
+//            | LEFT | DOWN | RIGHT|            |     |     |     |
+           bindings = <
+            &kp F1    &kp F2  &kp F3     &kp F4   &kp F5                &kp F6     &kp F7       &kp 8        &kp F9       &kp F10
+            &kp EXCL  &kp AT  &kp HASH   &kp DLLR &kp PRCNT             &kp CARET  &kp AMPS     &kp STAR     &kp F11      &kp F12
+            &kp GRAVE &kp ESC &kp KP_NUM &kp UP   &kp CAPS              &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+                              &kp LEFT   &kp DOWN &kp RIGHT             &trans     &trans       &trans
+           >;
+           sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+    };
+};
