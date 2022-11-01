@@ -15,15 +15,15 @@
 
         default {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//  Q    |  W  |  E  |  R  |  T  | |  Y  |  U  |  I  |    O    |  P   |
-//  A    |  S  |  D  |  F  |  G  | |  H  |  J  |  K  |    L    |  ;   |
-// Lsft/Z|  X  |  C  |  V  |  B  | |  N  |  M  |  ,  |    .    |Rsft//|
-//      | LCTL | Bspc/LMOD | SPC | | Del/Num | Ent | Sym |
+//  Q  |  W  |  E  |  R  |  T  |            |  Y  |  U  |  I  |    O    |  P  |
+//  A  |  S  |  D  |  F  |  G  |            |  H  |  J  |  K  |    L    | enter/mod2 |
+//  Z  |  X  |  C  |  V  |  B  |            |  N  |  M  |  ,  |    .    |  /  |
+//           | GUI | SPC |shift|            | mod1 | BCKSPC | next |
            bindings = <
-            &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P
-            &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI
-            &mt LSHFT Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &mt RSHFT FSLH
-            &kp LCTRL &mt LALT BSPC &kp SPACE &lt 1 DEL &lt 2 RET  &kp CAPS
+            &kp Q &kp W &kp E &kp R &kp T           &kp Y &kp U &kp I &kp O &kp P
+            &kp A &kp S &kp D &kp F &kp G           &kp H &kp J &kp K &kp L &lt 2 ENTER
+            &kp Z &kp X &kp C &kp V &kp B           &kp N &kp M &kp COMMA &kp DOT &kp FSLH
+            &kp LGUI &kp SPACE &kp LSHFT            &mo 1 &kp BSPC &kp C_NEXT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
